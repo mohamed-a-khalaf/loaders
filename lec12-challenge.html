@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+
+        div {
+            border: solid 1px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+
+            &:nth-of-type(1) {
+                background-color: lightblue;
+                width: 280px;
+                transform: translate(10px, 20px);
+                font-size: 8px;
+                text-align: center;
+                padding: 2px;
+
+                &:hover {
+                    width: 220px;
+                    transform: translate(30px, 20px);
+                }
+            }
+
+            &:nth-of-type(3) {
+                /* transform: scale(0.8, 3); */
+                transform: scale(0.8);
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            &:nth-of-type(4){
+                width: 150px;
+                height: 150px;
+                transform: rotate(360deg);
+                
+                &:hover{
+                    transform: rotate(0deg);
+                }
+
+            }
+
+            &:nth-of-type(5){
+                /* transform: skew(-30deg, 10deg); */
+                transform: skew(0deg, 10deg);
+            }
+        }
+            .ring{
+                position: fixed ;
+                bottom: 50%;
+                right: 60%;
+                
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                border: 7px solid lightgray;
+                border-top-color: aqua;
+                animation: spinner 0.7s linear infinite;
+            }
+
+            .dots{
+                border: none;
+                position : fixed;
+                bottom: 50%;
+                right: 20%;
+                display: inline-flex;
+                gap: 6px;
+               
+                span{
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                animation: pulsing 1.2s ease-in-out infinite;
+
+                &:nth-of-type(1){
+                    background-color: red;
+                }
+
+                &:nth-of-type(2){
+                    background-color: orange;
+                    animation-delay: 0.2s;
+                }
+
+                &:nth-of-type(3){
+                    background-color: lightskyblue;
+                    animation-delay: 0.4s;
+                }
+                }
+
+                
+            }
+        
+        @keyframes spinner {
+            from {transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes pulsing {
+            0%{
+                opacity : 0.5;
+                transform: scale(0.8);
+                
+                }
+            50%{
+                opacity: 0.8;
+                transform: scale(1.2);
+            }
+            100%{
+                opacity: 1;
+                transform: scale(1.4);
+            }
+        }
+
+        
+    </style>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Doloribus dolores a quia.</div>
+    <div>Quia blanditiis molestias ut?</div>
+    <div>Aperiam non minus ut?</div>
+    <div>Dolor inventore aliquam dolorum?</div>
+    <div>Error sit illo quaerat!</div>
+    <div>Exercitationem accusamus ipsam sed.</div>
+    <div>At voluptatum quod doloremque?</div>
+    <div>Mollitia aliquid odit perspiciatis.</div>
+    <div>Molestias, pariatur. Dignissimos, minima.</div>
+    <div class="ring"></div>
+    <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+
+</html>
